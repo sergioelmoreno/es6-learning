@@ -14,18 +14,37 @@
 
 	const markup = `
 		<ul class="news">
-		${ highlines.map(highlines => `<li>${highlines.name} está ${highlines.state}</li>`).join('') }
+		${ highlines.map(highlines => `
+			<li>
+			${highlines.name} está ${highlines.state}
+			</li>
+			`).join('') }
 		</ul>
 	`;
 	// join() is used to remove the commas that map() generated in the returned Array
-	
+
 	//console.log(markup);
 	document.body.innerHTML = markup;
 
 	//
+	const song = {
+		name: 'NO, NO, NO NOS MOVERÁN',
+		artist: 'Chanquete',
+		featuring: 'PDRO'
+	};
 
+	const markup2 = `
+		<div class="song">
+				<p>
+						${song.name} - ${song.artist}
+						${song.featuring ? `(Featuring: ${song.featuring})
+							` : '' }
 
+				</p>
+		</div>
+	`;
 
+	document.body.innerHTML += markup2;
 
 </script>        
 </body>

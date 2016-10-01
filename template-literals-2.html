@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled</title>
+</head>
+<body>
+<script>
+	const beer = {
+		name: 'Mahou Clásica',
+		brewery: 'MAHOU SAN MIGUEL',
+		keywords: ['espumosa', 'ligera', 'refrescante']
+	};
+
+	function renderKeywords (keywords) {
+		return `
+			<ul>
+					${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+			</ul>
+		`;
+	}
+	// render a function inside the literals
+	const markup = `
+		<div class="beer">
+		<h2>${beer.name}</h2>
+		<p class="brewery">
+		${renderKeywords(beer.keywords)}
+		</p>
+		</div>
+	`;
+
+document.body.innerHTML = markup;
+
+</script>        
+</body>
+</html>
