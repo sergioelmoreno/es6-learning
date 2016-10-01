@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+
+</head>
+<body>
+
+</body>
+
+<script>
+	const names= ['wes', 'kait', 'lux'];
+
+	const fullnames = names.map(function(name) {
+		return `${name} bos`;
+	});
+	const fullnames2 = names.map((name) => {
+		return `${name} bos`;
+	});
+	// if the Function parameter === 1 delete parentheses
+	const fullnames3 = names.map(name => {
+		return `${name} bos`;
+	});
+	// simplified in one line. Brackets deleted
+	const fullnames4 = names.map(name => `${name} bos`);
+	// if no need parameter
+	const fullnames5 = names.map(() => `Holo bos`);
+
+	console.log(fullnames);
+	console.log(fullnames2);
+	console.log(fullnames3);
+	console.log(fullnames4);
+	console.log(fullnames5);
+
+	//
+	const sayMyName = (name) => { alert(`Hello ${name}!`) };
+	sayMyName('Sergio');
+
+</script>
+
+
+</html>

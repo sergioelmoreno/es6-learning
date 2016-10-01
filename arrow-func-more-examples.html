@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>arrow-func-more-examples</title>
+
+</head>
+<body>
+
+</body>
+
+<script>
+	const race = '100 meters';
+	const winners = ['Winner 1', 'Winner 2', 'Winner 3'];
+
+	const win = winners.map((winner, i) => ({name: winner, race: race, place: i + 1}))
+	//simplified redundant var
+	const win2 = winners.map((winner, i) => ({name: winner, race, place: i + 1}))
+
+	console.table(win);
+	console.table(win2);
+
+	//
+
+	const ages = [34, 83, 33, 29, 52, 10, 75 ];
+	const old = ages.filter(age => (age <= 60));
+	// simplified condition
+	const old2 = ages.filter(age => age <= 60);
+
+	console.log(old);
+	console.log(old2);
+
+</script>
+
+
+</html>

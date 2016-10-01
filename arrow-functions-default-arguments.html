@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body>
+
+  <script>
+  function calculateBill( total, tax, tip) {
+    // if (tax === undefined) {tax = 0.13};
+    // if (tip === undefined) {tip = 0.15};
+    // OR 
+    tax = tax || 0.13;
+    tip = tip || 0.15;
+    return total +(total * tax) + (total * tip);
+  }
+  // ES6 simplified
+  function calculateBill( total, tax = 0.13, tip = 0.15 ) {
+
+    return total +(total * tax) + (total * tip);
+
+  }
+  // set the argument tax to undefined to take the default value
+  const totalBill = calculateBill(100, undefined, 0.25);
+  console.log(totalBill);
+  </script>
+
+</body>
+</html>
