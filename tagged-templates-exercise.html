@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <style>
+			    abbr {
+			      border-bottom:1px dotted grey;
+			    }
+			  </style>
+    </head>
+    <body>
+    	<div class="bio">
+    		
+    	</div>
+    <script>
+    const adjective = {
+    	bad: 'de mierda',
+    	medium: 'regulero',
+    	good: 'liberador'
+    }
+    // function for mix all the values in adjective
+    function addAbbreviations (strings, ...values) {
+    	const abbreviated = values.map(value => {
+    		if(adjective[value]) {
+    			return `<abbr title="${adjective[value]}">${value}</abbr>`;
+    		}
+    		return value;
+    	});
+ 				//
+ 				return strings.reduce((sentence, string, i) => {
+ 					return `${sentence}${string}${abbreviated[i] || ''}`;
+ 				}, '')
+    }
+    const first = 'PDRO',
+    			last = 'SNCHZ',
+    			// sentence = `
+    			// 	Hola, mi nombre es ${first} ${last} y tengo un domingo ${'bad'}, bueno mejor decir que ${'medium'} sin llegar a ser ${'good'}
+    			// `;
+    			//
+    			// run the function in the results [sentence] template 
+    			sentence = addAbbreviations`
+    				Hola, mi nombre es ${first} ${last} y tengo un domingo ${'bad'}, bueno mejor decir que ${'medium'} sin llegar a ser ${'good'}
+    			`;
+    const bio = document.querySelector('.bio');
+    const p = document.createElement('p');
+    p.innerHTML = sentence;
+    bio.appendChild(p);
+
+    </script>
+    </body>
+</html>

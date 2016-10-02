@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+       
+    </head>
+		<body>
+			<script>
+				const course = 'RFB2';
+				const flightNumber = '20-AC2018-jz';
+				const accountNumber = '876897RT00981';
+				// startsWith() method
+				console.log('startsWith() method');
+				console.log('Case RFB: ' + course.startsWith('RFB'));
+				console.log('Case rfb: ' + course.startsWith('rfb'));
+				
+				console.log('startsWith(string, startAfterX) method');
+				console.log('Case AC: ' + flightNumber.startsWith('AC'));
+				console.log('Case AC, 3: ' + flightNumber.startsWith('AC', 3));
+				
+				// endsWith() method
+				console.log('endsWith() method');
+				console.log('Case jz: ' + flightNumber.endsWith('jz'));
+				console.log('endsWith(string, startCountAfterX) method');
+				console.log('Case RT, 8: ' + accountNumber.endsWith('RT', 8));
+				
+				// includes()
+				console.log('includes() method');
+				console.log('Case AC: ' + flightNumber.includes('AC'));
+				
+				// repeat()
+				const make = 'BMW';
+				const model = 'x5';
+				const color = 'Royal blue';
+
+				function leftPad(str, lenght = 20) {
+					return `→ ${'	'.repeat(lenght - str.lenght)}${str}`;
+				}
+				console.log(leftPad(make));
+				console.log(leftPad(model));
+				console.log(leftPad(color));
+
+			</script>
+		</body>
+</html>

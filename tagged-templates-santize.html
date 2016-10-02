@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <style>
+			    abbr {
+			      border-bottom:1px dotted grey;
+			    }
+			  </style>
+    </head>
+    <body>
+    	<div class="bio">
+    		
+    	</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js"></script>
+    
+    <script>
+    function sanitize(strings, ...values) {
+    	// pass all the aboutMe pieces to the purify lib and return the strings cleaned [in this case the inside function onload() ]
+    	const dirty = strings.reduce((prev, next, i) => `${prev}${next}${values[i] || ''}`, '');
+    	return DOMPurify.sanitize(dirty);
+ 	 	}
+		const first = 'PDRO';
+    // run a function inside a template have break the site security
+		//const aboutMe = `I love to do politics <img src="http://unsplash.it/100/100?random" onload="alert('you are FIRED');" />`;
+		// run sanitize() to pass the values inside the function
+		const aboutMe = sanitize`I love to do politics <img src="http://unsplash.it/100/100?random" onload="alert('you are FIRED');" />`;
+    const html = `
+    <h3>${first}</h3>
+    <p>${aboutMe}</p>
+    `;
+    const bio = document.querySelector('.bio');
+    bio.innerHTML = html;
+
+    </script>
+    </body>
+</html>
